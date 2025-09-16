@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<style>
+.card {
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.8);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
+
+.title {
+  color: grey;
+  font-size: 18px;
+}
+
+button {
+  border: none;
+  outline: 10;
+  display: inline-block;
+  padding: 12px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+
+button:hover, a:hover {
+  opacity: 0.7;
+}
+</style>
+</head>
+<body>
+
+<h2 style="text-align:center">User Profile Card</h2>
+
+<div class="card">
+  <img src="assets/images/user/2.jpg" style="width:100%">
+
+  <h1>John Doe</h1>
+  <p class="title">Manager</p>
+  <div class="form-row">
+      <label for="inputEmail4">Email</label>
+         <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+    </div>
+	<br>
+    <div class="form-group col-md-6">
+         <label for="inputPassword4">Password</label>
+           <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+		   <input type="submit" value="Change">
+    </div><br>
+  <div class="form-row">
+  <label for="validationCustom03">Phone Number</label>
+   <input type="number" class="form-control" id="validationCustom03" placeholder="Phone number" required>
+   <input type="submit" value="Change">
+   </div>
+   <br>
+     <div class="form-row">
+   <label for="inputAddress">Address</label>
+   <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+</div>
+<br>
+<br>
+ </div>
+
+</body>
+</html>

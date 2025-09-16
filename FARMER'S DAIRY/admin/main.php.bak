@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>ADMIN PAGE</title>
+    <!-- HTML5 Shim and Respond.js IE11 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 11]>
+    	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    	<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    	<![endif]-->
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="">
+    <meta name="author" content="Phoenixcoded" />
+    <!-- Favicon icon -->
+    <!-- vendor css -->
+    <link rel="stylesheet" href="assets/css/style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+.fixed-button{
+	visibility:hidden;
+}
+</style>
+    
+
+</head>
+<body class="">
+	<!-- [ Pre-loader ] start -->
+	<div class="loader-bg">
+		<div class="loader-track">
+			<div class="loader-fill"></div>
+		</div>
+	</div>
+	<!-- [ Pre-loader ] End -->
+	<!-- [ navigation menu ] start -->
+	<nav class="pcoded-navbar  ">
+		<div class="navbar-wrapper  ">
+			<div class="navbar-content scroll-div " >
+				
+				<div class="">
+					<div class="main-menu-header">
+						<img class="img-radius" src="assets/images/avatar-2.jpg" alt="User-Profile-Image">
+						<div class="user-details">
+							<span>ADMIN</span>
+							<div id="more-details"><i class="fa fa-chevron-down m-l-5"></i></div>
+						</div>
+					</div>
+					<div class="collapse" id="nav-user-link">
+						<ul class="list-unstyled">
+							<li class="list-group-item"><a href="profile.php"><i class="feather icon-user m-r-5"></i>View Profile</a></li>
+							
+							<li class="list-group-item"><a href="logout.php"><i class="feather icon-log-out m-r-5"></i>Logout</a></li>
+						</ul>
+					</div>
+				</div>
+				
+				<ul class="nav pcoded-inner-navbar ">
+					<li class="nav-item pcoded-menu-caption">
+						<label>Navigation</label>
+					</li>
+					<li class="nav-item">
+					    <a href="main.php" class="nav-link "><span class="pcoded-micon"><i class="feather icon-home"></i></span><span class="pcoded-mtext">Dashboard</span></a>
+					</li>
+					<li class="nav-item pcoded-hasmenu">
+					    <a href="#!" class="nav-link "><span class="pcoded-micon"><i class="feather icon-align-justify"></i></span><span class="pcoded-mtext">Dippo Details</span></a>
+					    <ul class="pcoded-submenu">
+					       <li><a href="adddippo.php">Add Dippo</a></li>
+					<li><a href="viewdippo.php">View Dippo</a></li>	
+					<li><a href="rate.php">Add Rate</a></li>
+					<li><a href="viewrate.php">View Rate</a></li>
+					    </ul>
+					</li>
+					<li class="nav-item">
+					    <a href="viewmilk.php" class="nav-link "><span class="pcoded-micon"><i class="feather icon-align-justify"></i></span><span class="pcoded-mtext">Milk Details</span></a>
+					</li>
+					<li class="nav-item pcoded-hasmenu">
+					    <a href="#!" class="nav-link "><span class="pcoded-micon"><i class="feather icon-align-justify"></i></span><span class="pcoded-mtext">Manage Dippo</span></a>
+					    <ul class="pcoded-submenu">
+					        <li><a href="addmanager.php">Add Manager </a></li>
+					        <li><a href="viewmanager.php" >View Manager</a></li>
+					    </ul>
+					</li>
+					<li class="nav-item">
+					    <a href="viewfeed.php" class="nav-link "><span class="pcoded-micon"><i class="feather icon-align-justify"></i></span><span class="pcoded-mtext">View Feedback</span></a>
+					</li>					
+				</ul>
+				
+				
+			</div>
+		</div>
+	</nav>
+	<!-- [ navigation menu ] end -->
+	<!-- [ Header ] start -->
+	<header class="navbar pcoded-header navbar-expand-lg navbar-light header-dark">
+		
+			
+				<div class="m-header">
+					<a class="mobile-menu" id="mobile-collapse" href="#!"><span></span></a>
+					<a href="#!" class="b-brand">
+						<!-- ========   change your logo hear   ============ -->
+						<img src="assets/images/logo1.png" width="190px" height="50px" class="logo">
+						
+					</a>
+					<a href="#!" class="mob-toggler">
+						<i class="feather icon-more-vertical"></i>
+					</a>
+				</div>
+				<div class="collapse navbar-collapse">
+					<ul class="navbar-nav mr-auto">
+						<li class="nav-item">
+							<a href="#!" class="pop-search"><i class="feather icon-search"></i></a>
+							<div class="search-bar">
+								<input type="text" class="form-control border-0 shadow-none" placeholder="Search hear">
+								<button type="button" class="close" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+						</li>
+						
+						
+					</ul>
+					<ul class="navbar-nav ml-auto">
+						
+						<li>
+							<div class="dropdown drp-user">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+									<i class="feather icon-user"></i>
+								</a>
+								<div class="dropdown-menu dropdown-menu-right profile-notification">
+									<div class="pro-head">
+										
+										<span>ADMIN</span>
+										<a href="profile.php" class="dud-logout" title="Logout">
+											<i class="feather icon-user"></i>
+										</a>
+									</div>
+									<ul class="pro-body">
+										<li><a href="logout.php" class="dropdown-item"><i class="feather  icon-log-out"></i> Logout</a></li>
+										
+									</ul>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+				
+			
+	</header>
+	<!-- [ Header ] end -->
+	
+	
+
+<!-- [ Main Content ] start -->
+<div class="pcoded-main-container">
+    <div class="pcoded-content">
+	
+        <!-- [ breadcrumb ] start -->
+        <div class="page-header">
+            <div class="page-block">
+                <div class="row align-items-center">
+                    <div class="col-md-12">
+                        <div class="page-header-title">
+                            <h5 class="m-b-10">Dashboard Analytics</h5>
+                        </div>
+                        <ul class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="index.html"><i class="feather icon-home"></i></a></li>
+                            <li class="breadcrumb-item"><a href="#!">Dashboard Analytics</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+		
+
+        <!--<div class="row">
+            <!-- [ variant-chart ] start 
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Basic line chart</h5>
+                    </div>
+                    <div class="card-body">
+                        <div id="line-chart-1"></div>
+                    </div>
+                </div>
+            </div>
+        </div>-->
+
+        <!-- [ breadcrumb ] end -->
+        <!-- [ Main Content ] start -->
+        <div class="row">
+            <!-- table card-1 start -->
+            <div class="col-md-12 col-xl-6">
+                <div class="card flat-card">
+                    <div class="row-table">
+                        <div class="col-sm-6 card-body br">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                  <i class="fa fa-tint" style="font-size:40px;color:black"></i>
+                                </div>
+                                <div class="col-sm-8 text-md-center">
+                                   <h5><?php
+								include 'config.php';
+								$sql1="select sum(liter) from add_milk";
+								$result1=mysqli_query($con,$sql1);
+								$num1=mysqli_num_rows($result1);
+								$sI=0;
+								if($num1>0)
+								{
+									while($row1=mysqli_fetch_array($result1))
+									{
+										$sI+=1;
+										$liter=$row1[0];
+										}
+										}
+								?>
+								<?php echo round($liter,2) ; ?>
+								</h5>
+                                    <span>MILK</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 card-body">
+                            <div class="row">
+                                <div class="col-sm-4">
+									<i class="fas fa-vial" style="font-size:40px;color:black"></i>
+								   
+                                </div>
+                                <div class="col-sm-8 text-md-center">
+                                    <h5><?php
+								include 'config.php';
+								$sql1="select sum(fat) from add_milk";
+								$result1=mysqli_query($con,$sql1);
+								$num1=mysqli_num_rows($result1);
+								$sI=0;
+								if($num1>0)
+								{
+									while($row1=mysqli_fetch_array($result1))
+									{
+										$sI+=1;
+										$fat=$row1[0];
+										}
+										}
+								?>
+								<?php echo round($fat,2) ; ?>
+								</h5>
+                                    <span>FAT</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row-table">
+                        <div class="col-sm-6 card-body br">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <img src="assets/images/11.png" width="60px" height="50px">
+                                </div>
+                                <div class="col-sm-8 text-md-center">
+                                    <h5>
+									<?php
+								include 'config.php';
+								$sql1="select sum(no_cattle) from add_user";
+								$result1=mysqli_query($con,$sql1);
+								$num1=mysqli_num_rows($result1);
+								$sI=0;
+								if($num1>0)
+								{
+									while($row1=mysqli_fetch_array($result1))
+									{
+										$sI+=1;
+										$no_cattle=$row1[0];
+										}
+										}
+								?>
+								<?php echo $no_cattle; ?>
+								</h5>
+                                    <span>COWS</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 card-body">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <i class="fas fa-syringe" style="font-size:40px;color:black"></i>
+                                </div>
+                                <div class="col-sm-8 text-md-center">
+                                     <h5><?php
+								include 'config.php';
+								$sql1="select sum(no_insured_cattles) from add_user";
+								$result1=mysqli_query($con,$sql1);
+								$num1=mysqli_num_rows($result1);
+								$sI=0;
+								if($num1>0)
+								{
+									while($row1=mysqli_fetch_array($result1))
+									{
+										$sI+=1;
+										$no_insured_cattles=$row1[0];
+										}
+										}
+								?>
+								<?php echo $no_insured_cattles; ?>
+								</h5>
+                                    <span>INSURANCED COWS</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- widget primary card start -->
+                
+                <!-- widget primary card end -->
+            </div>
+            <!-- table card-1 end -->
+            <!-- table card-2 start -->
+            <div class="col-md-12 col-xl-6">
+                <div class="card flat-card">
+                    <div class="row-table">
+                        <div class="col-sm-6 card-body br">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                   <i class="fa fa-users" style="font-size:40px;color:black"></i>
+                                </div>
+                                <div class="col-sm-8 text-md-center">
+                                    <h5> <?php
+								include 'config.php';
+								$sql1="select * from add_user";
+								$result1=mysqli_query($con,$sql1);
+								$num1=mysqli_num_rows($result1);
+								
+								?>
+								<?php echo $num1; ?>
+								</h5>
+								<span>USERS</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 card-body">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <i class="fa fa-users" style="font-size:36px"></i>
+                                </div>
+                                <div class="col-sm-8 text-md-center">
+                                    <h5> <?php
+								include 'config.php';
+								$sql1="select * from add_staff";
+								$result1=mysqli_query($con,$sql1);
+								$num1=mysqli_num_rows($result1);
+								
+								?>
+								<?php echo $num1; ?>
+								</h5>
+                                    <span>STAFF</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row-table">
+                        <div class="col-sm-6 card-body br">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <i class="fa fa-plus-square" style="font-size:38px;color:BLACK"></i>
+                                </div>
+                                <div class="col-sm-8 text-md-center">
+                                    <h5> <?php
+								include 'config.php';
+								$sql1="select * from add_doctor";
+								$result1=mysqli_query($con,$sql1);
+								$num1=mysqli_num_rows($result1);
+								
+								?>
+								<?php echo $num1; ?>
+								</h5>
+                                    <span>Doctor</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 card-body">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                     <i class='fas fa-glass-whiskey' style='font-size:48px;color:black'></i>
+                                </div>
+                                <div class="col-sm-8 text-md-center">
+                                    <h5> <?php
+								include 'config.php';
+								$sql1="select * from dipo_reg";
+								$result1=mysqli_query($con,$sql1);
+								$num1=mysqli_num_rows($result1);
+								
+								?>
+								<?php echo $num1; ?>
+								</h5>
+                                    <span>Dippo</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- widget-success-card start -->
+                
+                <!-- widget-success-card end -->
+            </div>
+           
+        
+            <div class="col-md-12 col-xl-12">
+                 <div class="card flat-card">
+                    <div class="row-table">
+                        <div class="col-sm-4 card-body ">
+						<div class="card flat-card widget-primary-card">
+							<div class="row-table">
+								<div class="col-sm-3 card-body">
+									<i class="fa fa-shopping-bag"></i>
+								</div>
+								<div class="col-sm-6">
+									<h4><?php
+								include 'config.php';
+								$sql1="select sum(qty) from add_feed";
+								$result1=mysqli_query($con,$sql1);
+								$num1=mysqli_num_rows($result1);
+								$sI=0;
+								if($num1>0)
+								{
+									while($row1=mysqli_fetch_array($result1))
+									{
+										$sI+=1;
+										$qty=$row1[0];
+										}
+										}
+								?>
+								<?php echo $qty; ?>
+								</h4>
+									<h6>Feeds (in Stock)</h6>
+								</div>
+							</div>
+						</div>
+						</div>
+						<div class="col-sm-4 card-body ">
+						<div class="card flat-card widget-purple-card">
+							<div class="row-table">
+								<div class="col-sm-3 card-body">
+									<i class="fa fa-medkit"></i>
+								</div>
+								<div class="col-sm-9">
+									<h4><?php
+								include 'config.php';
+								$sql1="select sum(qty) from medicine";
+								$result1=mysqli_query($con,$sql1);
+								$num1=mysqli_num_rows($result1);
+								$sI=0;
+								if($num1>0)
+								{
+									while($row1=mysqli_fetch_array($result1))
+									{
+										$sI+=1;
+										$qty=$row1[0];
+										}
+										}
+								?>
+								<?php echo $qty; ?>
+								</h4>
+									<h6>Medicines (in Stock)</h6>
+								</div>
+							</div>
+						</div>
+						</div>
+						<div class="col-sm-4 card-body ">
+					<div class="card flat-card widget-primary-card">
+                    <div class="row-table">
+                        <div class="col-sm-4 card-body">
+                            <i class="feather icon-star-on"></i>
+                        </div>
+                        <div class="col-sm-9">
+                            <h4>
+							<?php
+								include 'config.php';
+								$sql11="select sum(ostar) from feedback";
+								$result11=mysqli_query($con,$sql11);
+								$num11=mysqli_num_rows($result11);
+								$sI=0;
+								if($num11>0)
+								{
+									while($row11=mysqli_fetch_array($result11))
+									{
+										$sI+=1;
+										$ostar=$row11[0];
+										}
+										}
+								?>
+								<?php echo $ostar; ?>
+								</h4>
+                            <h6>Ratings Received</h6>
+                        </div>
+                    </div>
+					</div>
+					</div>
+					</div>
+				</div>
+			</div>
+			 <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Basic chart</h5>
+                    </div>
+                    <div class="card-body">
+                        <?php 
+					include 'config.php';
+					 $sql12 ="select sum(liter), date from add_milk group by month(date)";
+         $result12= mysqli_query($con,$sql12);
+         $chart_data="";
+         while ($row12 = mysqli_fetch_array($result12)) { 
+ 
+            $month[]  = date_format(date_create( $row12[1]),"M d, Y")  ;
+            $sales[] = $row12[0];
+        }
+
+					?>
+			<div style="width:100%;hieght:20%;text-align:center">
+            <h2 class="page-header" >Month-wise Analytics Of Collected Milk Details. </h2>
+			<h5>x-axis : Months		, y-axis : Liters</h5>
+            <canvas  id="chartjs_line"></canvas> 
+        </div>    
+
+  <script src="//code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+    <script type="text/javascript">
+      var ctx = document.getElementById("chartjs_line").getContext('2d');
+                var myChart = new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels:<?php echo json_encode($month); ?>,
+                        datasets: [{
+                            backgroundColor: [
+                               "#f76434",
+                                "#f76434",
+                                "#f76434",
+                                "#f76434",
+                                "#f76434",
+                                "#f76434",
+                                "#f76434"
+                            ],
+                            data:<?php echo json_encode($sales); ?>,
+                        }]
+                    },
+                    options: {
+                           legend: {
+                        display: true,
+                        position: 'bottom',
+ 
+                        labels: {
+                            fontColor: '#f76434',
+                            fontFamily: 'Circular Std Book',
+                            fontSize: 20,
+                        }
+                    },
+ 
+ 
+                }
+                });
+			
+    </script>
+                    </div>
+                </div>
+            </div>
+			<div class="col-lg-12 col-md-12">
+                <div class="card table-card review-card">
+                    <div class="card-header borderless ">
+                        <h5>Photo</h5>
+                        
+                    </div>
+                    <div class="card-body pb-0">
+                        <img src="assets/images/48.png" width="100%">
+                    </div>
+                </div>
+              </div>
+			
+
+                         
+					</div>
+        <!-- [ Main Content ] end -->
+    </div>
+	
+	
+</div>
+
+
+<!-- [ Main Content ] end -->
+    <!-- Warning Section start -->
+    <!-- Older IE warning message -->
+    <!--[if lt IE 11]>
+        <div class="ie-warning">
+            <h1>Warning!!</h1>
+            <p>You are using an outdated version of Internet Explorer, please upgrade
+               <br/>to any of the following web browsers to access this website.
+            </p>
+            <div class="iew-container">
+                <ul class="iew-download">
+                    <li>
+                        <a href="http://www.google.com/chrome/">
+                            <img src="assets/images/browser/chrome.png" alt="Chrome">
+                            <div>Chrome</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.mozilla.org/en-US/firefox/new/">
+                            <img src="assets/images/browser/firefox.png" alt="Firefox">
+                            <div>Firefox</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://www.opera.com">
+                            <img src="assets/images/browser/opera.png" alt="Opera">
+                            <div>Opera</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.apple.com/safari/">
+                            <img src="assets/images/browser/safari.png" alt="Safari">
+                            <div>Safari</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
+                            <img src="assets/images/browser/ie.png" alt="">
+                            <div>IE (11 & above)</div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <p>Sorry for the inconvenience!</p>
+        </div>
+    <![endif]-->
+    <!-- Warning Section Ends -->
+
+    <!-- Required Js -->
+    <script src="assets/js/vendor-all.min.js"></script>
+    <script src="assets/js/plugins/bootstrap.min.js"></script>
+    <script src="assets/js/pcoded.min.js"></script>
+
+<!-- Apex Chart -->
+<script src="assets/js/plugins/apexcharts.min.js"></script>
+
+
+<!-- custom-chart js -->
+<script src="assets/js/pages/dashboard-main.js"></script>
+<script src="assets/js/pages/chart-apex.js"></script>
+
+</body>
+
+</html>
